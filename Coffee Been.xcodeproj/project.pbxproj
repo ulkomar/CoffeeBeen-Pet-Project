@@ -7,21 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		808BA05B2912CCE800E936F0 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808BA05A2912CCE800E936F0 /* OnboardingViewController.swift */; };
 		80DA505228F87E1F00499CAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA505128F87E1F00499CAA /* AppDelegate.swift */; };
 		80DA505428F87E1F00499CAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA505328F87E1F00499CAA /* SceneDelegate.swift */; };
-		80DA505628F87E1F00499CAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA505528F87E1F00499CAA /* ViewController.swift */; };
-		80DA505928F87E1F00499CAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80DA505728F87E1F00499CAA /* Main.storyboard */; };
 		80DA505C28F87E1F00499CAA /* Coffee_Been.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80DA505A28F87E1F00499CAA /* Coffee_Been.xcdatamodeld */; };
 		80DA505E28F87E2100499CAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80DA505D28F87E2100499CAA /* Assets.xcassets */; };
 		80DA506128F87E2100499CAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80DA505F28F87E2100499CAA /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		808BA05A2912CCE800E936F0 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		80DA504E28F87E1F00499CAA /* Coffee Been.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffee Been.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80DA505128F87E1F00499CAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80DA505328F87E1F00499CAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		80DA505528F87E1F00499CAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		80DA505828F87E1F00499CAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80DA505B28F87E1F00499CAA /* Coffee_Been.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Coffee_Been.xcdatamodel; sourceTree = "<group>"; };
 		80DA505D28F87E2100499CAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80DA506028F87E2100499CAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +37,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		808BA05C2912CD4A00E936F0 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		808BA05D2912CD5800E936F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		808BA05E2912CD6300E936F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		808BA05F2912CD6A00E936F0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				808BA05A2912CCE800E936F0 /* OnboardingViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		808BA0602912CD9C00E936F0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				80DA505D28F87E2100499CAA /* Assets.xcassets */,
+				80DA505F28F87E2100499CAA /* LaunchScreen.storyboard */,
+				80DA506228F87E2100499CAA /* Info.plist */,
+				80DA505A28F87E1F00499CAA /* Coffee_Been.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		80DA504528F87E1F00499CAA = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +96,13 @@
 		80DA505028F87E1F00499CAA /* Coffee Been */ = {
 			isa = PBXGroup;
 			children = (
+				808BA0602912CD9C00E936F0 /* Resources */,
+				808BA05D2912CD5800E936F0 /* Views */,
+				808BA05F2912CD6A00E936F0 /* Controllers */,
+				808BA05E2912CD6300E936F0 /* Models */,
+				808BA05C2912CD4A00E936F0 /* Coordinator */,
 				80DA505128F87E1F00499CAA /* AppDelegate.swift */,
 				80DA505328F87E1F00499CAA /* SceneDelegate.swift */,
-				80DA505528F87E1F00499CAA /* ViewController.swift */,
-				80DA505728F87E1F00499CAA /* Main.storyboard */,
-				80DA505D28F87E2100499CAA /* Assets.xcassets */,
-				80DA505F28F87E2100499CAA /* LaunchScreen.storyboard */,
-				80DA506228F87E2100499CAA /* Info.plist */,
-				80DA505A28F87E1F00499CAA /* Coffee_Been.xcdatamodeld */,
 			);
 			path = "Coffee Been";
 			sourceTree = "<group>";
@@ -130,7 +167,6 @@
 			files = (
 				80DA506128F87E2100499CAA /* LaunchScreen.storyboard in Resources */,
 				80DA505E28F87E2100499CAA /* Assets.xcassets in Resources */,
-				80DA505928F87E1F00499CAA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,24 +177,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80DA505628F87E1F00499CAA /* ViewController.swift in Sources */,
 				80DA505C28F87E1F00499CAA /* Coffee_Been.xcdatamodeld in Sources */,
 				80DA505228F87E1F00499CAA /* AppDelegate.swift in Sources */,
 				80DA505428F87E1F00499CAA /* SceneDelegate.swift in Sources */,
+				808BA05B2912CCE800E936F0 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		80DA505728F87E1F00499CAA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				80DA505828F87E1F00499CAA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		80DA505F28F87E2100499CAA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -293,10 +321,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q88WS7U793;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Coffee Been/Info.plist";
+				INFOPLIST_FILE = "Coffee Been/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -321,10 +348,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q88WS7U793;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Coffee Been/Info.plist";
+				INFOPLIST_FILE = "Coffee Been/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
