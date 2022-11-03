@@ -38,14 +38,19 @@ class OnboardingViewController: UIViewController {
         setupConstraints()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print( self.responderChain() )
+    }
+    
     //MARK: - Private methods
     
     private func setupSubviews() {
         // set up scrolling pages
-        self.view.addSubview(scrollView)
+        
         setupPage(toScrollView: scrollView, toPage: 0, imageName: "onboarding1")
         setupPage(toScrollView: scrollView, toPage: 1, imageName: "onboarding2")
         setupPage(toScrollView: scrollView, toPage: 2, imageName: "onboarding3")
+        self.view.addSubview(scrollView)
     }
     
     private func setupPage(toScrollView scView: UIScrollView, toPage pageNum: Int, imageName image: String) {
@@ -60,7 +65,7 @@ class OnboardingViewController: UIViewController {
         page.addSubview( stackView )
         
         NSLayoutConstraint.activate([
-            stackView.bottomAnchor.constraint(equalTo: page.safeAreaLayoutGuide.bottomAnchor),
+            stackView.bottomAnchor.constraint(equalTo: page.safeAreaLayoutGuide.bottomAnchor, constant: -50),
             stackView.leadingAnchor.constraint(equalTo: page.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: page.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
@@ -88,18 +93,18 @@ class OnboardingViewController: UIViewController {
         button.backgroundColor = UIColor(red: 16/255, green: 149/255, blue: 102/255, alpha: 1)
         button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
-//        button.backgroundColor = .green
-//        button.sizeToFit()
+        button.addTarget(nil, action: #selector(getprint), for: .touchUpInside)
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.center = self.view.center
         stackView.axis = .vertical
-        stackView.alignment = .fill
         stackView.distribution = .fill
         stackView.spacing = 20
         stackView.addArrangedSubview(label1)
         stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(button)
+        
+        button.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         return stackView
     }
@@ -108,21 +113,16 @@ class OnboardingViewController: UIViewController {
        
     }
     
-//    private func addShadow(toView: UIView) {
-////        let layer = CALayer()
-////        layer.backgroundColor = UIColor.black.cgColor
-////        layer.frame = toView.frame
-////        layer.opacity = 0.3
-//        let topColor = UIColor.clear.withAlphaComponent(0.1).cgColor
-//        let bottomColor = UIColor.black.withAlphaComponent(0.7).cgColor
-//        let layer = CAGradientLayer()
-//        layer.startPoint = CGPoint(x: 0.5, y: 0.0)
-//        layer.endPoint = CGPoint(x: 0.5, y: 0.9)
-//        layer.frame = toView.frame
-//        layer.colors = [topColor, bottomColor]
-//        layer.transform = CATransform3DMakeRotation(0, 0, 0, 0)
-//        toView.layer.addSublayer(layer)
-//    }
-    
+    @objc func getprint(_ sender: UIButton) {
+        print("hello")
+    }
+}
 
+extension UIResponder {
+    func responderChain() -> String {
+    guard let next = next else {
+        return String(describing: Self.self)
+    }
+    return String(describing: Self.self) + " -> " + next.responderChain()
+    }
 }
