@@ -39,10 +39,6 @@ class OnboardingViewController: UIViewController {
         setupConstraints()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print( self.responderChain() )
-    }
-    
     //MARK: - Private methods
     
     private func setupSubviews() {
@@ -51,7 +47,6 @@ class OnboardingViewController: UIViewController {
         setupPage(toScrollView: scrollView, toPage: 0, imageName: "onboarding1")
         setupPage(toScrollView: scrollView, toPage: 1, imageName: "onboarding2")
         setupPage(toScrollView: scrollView, toPage: 2, imageName: "onboarding3")
-        
     }
     
     private func setupPage(toScrollView scView: UIScrollView, toPage pageNum: Int, imageName image: String) {
@@ -67,15 +62,21 @@ class OnboardingViewController: UIViewController {
         page.contentMode = .scaleAspectFill
         page.clipsToBounds = true
         
-        let stackView = setupStackViewForPage(pageNumber: pageNum)
-
-        page.addSubview( stackView )
+        //add Shadow
+        let gradient = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = [UIColor.clear.withAlphaComponent(0.1).cgColor, UIColor.black.withAlphaComponent(0.5).cgColor]
         
+        let stackView = setupStackViewForPage(pageNumber: pageNum)
+        
+        page.layer.addSublayer(gradient)
+        page.addSubview( stackView )
         NSLayoutConstraint.activate([
-            stackView.bottomAnchor.constraint(equalTo: page.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+            stackView.bottomAnchor.constraint(equalTo: page.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             stackView.leadingAnchor.constraint(equalTo: page.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: page.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
+        
         
         scView.addSubview(page)
     }
@@ -101,6 +102,7 @@ class OnboardingViewController: UIViewController {
         button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(nil, action: #selector(getprint), for: .touchUpInside)
+        button.tag = num
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.center = self.view.center
@@ -121,7 +123,18 @@ class OnboardingViewController: UIViewController {
     }
     
     @objc func getprint(_ sender: UIButton) {
-        print("hello")
+        switch sender.tag {
+        case 0:
+//            scrollView.contentOffset.x = view.frame.width
+            scrollView.setContentOffset(CGPoint(x: view.frame.width, y: 0), animated: true)
+        case 1:
+//            scrollView.contentOffset.x = view.frame.width * 2
+            scrollView.setContentOffset(CGPoint(x: view.frame.width * 2, y: 0), animated: true)
+        case 2:
+            break
+        default:
+            break
+        }
     }
 }
 
