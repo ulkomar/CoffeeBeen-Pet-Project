@@ -25,6 +25,7 @@ class OnboardingViewController: UIViewController {
         scrollView.frame = view.frame
         scrollView.contentSize = CGSize(width: width * CGFloat(pageNumbers), height: height)
         scrollView.isPagingEnabled = true
+        scrollView.isScrollEnabled = true
         scrollView.backgroundColor = .gray
         
         return scrollView
@@ -46,17 +47,23 @@ class OnboardingViewController: UIViewController {
     
     private func setupSubviews() {
         // set up scrolling pages
-        
+        self.view.addSubview(scrollView)
         setupPage(toScrollView: scrollView, toPage: 0, imageName: "onboarding1")
         setupPage(toScrollView: scrollView, toPage: 1, imageName: "onboarding2")
         setupPage(toScrollView: scrollView, toPage: 2, imageName: "onboarding3")
-        self.view.addSubview(scrollView)
+        
     }
     
     private func setupPage(toScrollView scView: UIScrollView, toPage pageNum: Int, imageName image: String) {
         let frame = CGRect(x: scView.frame.width * CGFloat(pageNum), y: 0, width: scView.frame.width, height: scView.frame.height)
-        let page = UIImageView(frame: frame)
-        page.image = UIImage(named: image)
+        guard let image = UIImage(named: image) else {
+            return
+        }
+        
+        let page = UIView(frame: frame)
+        let cgIm = image.cgImage
+        page.layer.contents = cgIm
+        page.backgroundColor = UIColor(patternImage: image)
         page.contentMode = .scaleAspectFill
         page.clipsToBounds = true
         
