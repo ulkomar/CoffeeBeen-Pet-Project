@@ -30,32 +30,6 @@ class OnboardingViewController: UIViewController {
         return scrollView
     }()
     
-    lazy var stackView: UIStackView = {
-        let stackView = UIStackView()
-        
-        let label = UILabel()
-        label.text = screenInformation.getScreenInformation(index: 0)[1]
-        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        label.textColor = .white
-        label.numberOfLines = 3
-
-        let label1 = UILabel()
-        label1.text = screenInformation.getScreenInformation(index: 0)[0]
-        label1.font = UIFont.systemFont(ofSize: 50, weight: .semibold)
-        label1.textColor = .white
-        label1.numberOfLines = 3
-
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.center = self.view.center
-        stackView.axis = .vertical
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-        stackView.addArrangedSubview(label1)
-        stackView.addArrangedSubview(label)
-        
-        return stackView
-    }()
-    
     //MARK: - Lifecycle
    
     override func viewDidLoad() {
@@ -72,8 +46,6 @@ class OnboardingViewController: UIViewController {
         setupPage(toScrollView: scrollView, toPage: 0, imageName: "onboarding1")
         setupPage(toScrollView: scrollView, toPage: 1, imageName: "onboarding2")
         setupPage(toScrollView: scrollView, toPage: 2, imageName: "onboarding3")
-        
-        self.view.addSubview(stackView)
     }
     
     private func setupPage(toScrollView scView: UIScrollView, toPage pageNum: Int, imageName image: String) {
@@ -82,15 +54,58 @@ class OnboardingViewController: UIViewController {
         page.image = UIImage(named: image)
         page.contentMode = .scaleAspectFill
         page.clipsToBounds = true
+        
+        let stackView = setupStackViewForPage(pageNumber: pageNum)
+
+        page.addSubview( stackView )
+        
+        NSLayoutConstraint.activate([
+            stackView.bottomAnchor.constraint(equalTo: page.safeAreaLayoutGuide.bottomAnchor),
+            stackView.leadingAnchor.constraint(equalTo: page.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: page.safeAreaLayoutGuide.trailingAnchor, constant: -20)
+        ])
+        
         scView.addSubview(page)
     }
     
+    private func setupStackViewForPage(pageNumber num: Int) -> UIStackView {
+        let stackView = UIStackView()
+        
+        let label = UILabel()
+        label.text = screenInformation.getScreenInformation(index: num)[1]
+        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        label.textColor = .white
+        label.numberOfLines = 3
+
+        let label1 = UILabel()
+        label1.text = screenInformation.getScreenInformation(index: num)[0]
+        label1.font = UIFont.systemFont(ofSize: 50, weight: .semibold)
+        label1.textColor = .white
+        label1.numberOfLines = 3
+        
+        let button = UIButton()
+        button.setTitle(screenInformation.getScreenInformation(index: num)[2], for: .normal)
+        button.backgroundColor = UIColor(red: 16/255, green: 149/255, blue: 102/255, alpha: 1)
+        button.layer.cornerRadius = 10
+        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.backgroundColor = .green
+//        button.sizeToFit()
+
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.center = self.view.center
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.spacing = 20
+        stackView.addArrangedSubview(label1)
+        stackView.addArrangedSubview(label)
+        stackView.addArrangedSubview(button)
+        
+        return stackView
+    }
+    
     private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            stackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
-            stackView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
-        ])
+       
     }
     
 //    private func addShadow(toView: UIView) {
