@@ -12,6 +12,7 @@ class OnboardingViewController: UIViewController {
     //MARK: - Properties
     
     var screenInformation = OnboardingInfo()
+    let backgroundScrollImage = UIImage(named: "onboarding1")
     let pageNumbers = 3
     
     //MARK: - UIView setups
@@ -88,7 +89,7 @@ class OnboardingViewController: UIViewController {
         label.text = screenInformation.getScreenInformation(index: num)[1]
         label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         label.textColor = .white
-        label.numberOfLines = 3
+        label.numberOfLines = 0
 
         let label1 = UILabel()
         label1.text = screenInformation.getScreenInformation(index: num)[0]
@@ -101,7 +102,7 @@ class OnboardingViewController: UIViewController {
         button.backgroundColor = UIColor(red: 16/255, green: 149/255, blue: 102/255, alpha: 1)
         button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(nil, action: #selector(getprint), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(nextPage), for: .touchUpInside)
         button.tag = num
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -122,7 +123,8 @@ class OnboardingViewController: UIViewController {
        
     }
     
-    @objc func getprint(_ sender: UIButton) {
+    @objc func nextPage(_ sender: UIButton) {
+        print(scrollView.contentOffset)
         switch sender.tag {
         case 0:
 //            scrollView.contentOffset.x = view.frame.width
@@ -138,11 +140,3 @@ class OnboardingViewController: UIViewController {
     }
 }
 
-extension UIResponder {
-    func responderChain() -> String {
-    guard let next = next else {
-        return String(describing: Self.self)
-    }
-    return String(describing: Self.self) + " -> " + next.responderChain()
-    }
-}
