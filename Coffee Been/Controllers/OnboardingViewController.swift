@@ -12,7 +12,6 @@ class OnboardingViewController: UIViewController {
     //MARK: - Properties
     
     var screenInformation = OnboardingInfo()
-    let backgroundScrollImage = UIImage(named: "onboarding1")
     let pageNumbers = 3
     
     //MARK: - UIView setups
@@ -37,13 +36,11 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubviews()
-        setupConstraints()
     }
     
     //MARK: - Private methods
     
     private func setupSubviews() {
-        // set up scrolling pages
         self.view.addSubview(scrollView)
         setupPage(toScrollView: scrollView, toPage: 0, imageName: "onboarding1")
         setupPage(toScrollView: scrollView, toPage: 1, imageName: "onboarding2")
@@ -77,7 +74,6 @@ class OnboardingViewController: UIViewController {
             stackView.leadingAnchor.constraint(equalTo: page.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: page.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
-        
         
         scView.addSubview(page)
     }
@@ -119,21 +115,15 @@ class OnboardingViewController: UIViewController {
         return stackView
     }
     
-    private func setupConstraints() {
-       
-    }
-    
     @objc func nextPage(_ sender: UIButton) {
         print(scrollView.contentOffset)
         switch sender.tag {
         case 0:
-//            scrollView.contentOffset.x = view.frame.width
             scrollView.setContentOffset(CGPoint(x: view.frame.width, y: 0), animated: true)
         case 1:
-//            scrollView.contentOffset.x = view.frame.width * 2
             scrollView.setContentOffset(CGPoint(x: view.frame.width * 2, y: 0), animated: true)
         case 2:
-            break
+            break // insert coordinator nav controller changer
         default:
             break
         }
