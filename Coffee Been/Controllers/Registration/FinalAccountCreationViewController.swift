@@ -1,10 +1,22 @@
-//: A UIKit based Playground for presenting user interface
-  
-import UIKit
-import PlaygroundSupport
+//
+//  FinalAccountCreationViewController.swift
+//  Coffee Been
+//
+//  Created by Uladzislau Komar on 21.11.22.
+//
 
-class MyViewController : UIViewController {
-   
+import UIKit
+
+class FinalAccountCreationViewController: UIViewController {
+
+    
+    
+    //MARK: - Variables
+    
+    
+    
+    //MARK: - UIView setups
+    
     lazy var image: UIImageView = {
         let img = UIImageView()
         img.image = UIImage(named: "AppIcon")
@@ -34,13 +46,15 @@ class MyViewController : UIViewController {
     
     lazy var button: UIButton = getButton(text: "Let's explore", bgColor: .green, textColor: .white, height: 50, border: false)
     
+    //MARK: - Lifecycle functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.frame = CGRect(x: 0, y: 0, width: 380, height: 700)
         setupSubviews()
         setupConstraints()
     }
     
+    //MARK: - Class functions
     private func setupSubviews() {
         view.backgroundColor = .white
         view.addSubview(image)
@@ -79,12 +93,8 @@ class MyViewController : UIViewController {
         ])
     }
     
-    @objc func getSmt() {
-        print("Hello")
-    }
+    //MARK: - objc functions
+    
+    
+
 }
-
-
-
-PlaygroundPage.current.liveView = MyViewController()
-

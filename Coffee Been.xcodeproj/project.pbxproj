@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		808BA05B2912CCE800E936F0 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808BA05A2912CCE800E936F0 /* OnboardingViewController.swift */; };
+		802C5B0029229F2E0054BE6A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802C5AFF29229F2E0054BE6A /* LoginViewController.swift */; };
+		802C5B022923F38A0054BE6A /* UISettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802C5B012923F38A0054BE6A /* UISettings.swift */; };
+		802C5B04292A89030054BE6A /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802C5B03292A89030054BE6A /* CreateAccountViewController.swift */; };
+		803E8DBA2912DA0100328ED0 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E8DB92912DA0100328ED0 /* OnboardingViewController.swift */; };
+		803E8DBC2912F4E000328ED0 /* OnboardingScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E8DBB2912F4E000328ED0 /* OnboardingScreens.swift */; };
 		808BA0632912CF9000E936F0 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808BA0622912CF9000E936F0 /* CoordinatorProtocol.swift */; };
 		808BA0652912D06400E936F0 /* ViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808BA0642912D06400E936F0 /* ViewControllerProtocol.swift */; };
 		808BA06A2912D21300E936F0 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808BA0692912D21300E936F0 /* AppCoordinator.swift */; };
 		808BA06C2912D25000E936F0 /* MainCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808BA06B2912D25000E936F0 /* MainCoordinatorFactory.swift */; };
 		808BA06E2912D2E800E936F0 /* RegistrationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808BA06D2912D2E800E936F0 /* RegistrationFlow.swift */; };
+		80B2DC06292B6DB5002C7777 /* FinalAccountCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B2DC05292B6DB5002C7777 /* FinalAccountCreationViewController.swift */; };
 		80DA505228F87E1F00499CAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA505128F87E1F00499CAA /* AppDelegate.swift */; };
 		80DA505428F87E1F00499CAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA505328F87E1F00499CAA /* SceneDelegate.swift */; };
 		80DA505C28F87E1F00499CAA /* Coffee_Been.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80DA505A28F87E1F00499CAA /* Coffee_Been.xcdatamodeld */; };
@@ -21,12 +26,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		808BA05A2912CCE800E936F0 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		802C5AFF29229F2E0054BE6A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		802C5B012923F38A0054BE6A /* UISettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISettings.swift; sourceTree = "<group>"; };
+		802C5B03292A89030054BE6A /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		803E8DB82912D81400328ED0 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		803E8DB92912DA0100328ED0 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		803E8DBB2912F4E000328ED0 /* OnboardingScreens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingScreens.swift; path = "Coffee Been/Controllers/OnboardingScreens.swift"; sourceTree = SOURCE_ROOT; };
 		808BA0622912CF9000E936F0 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		808BA0642912D06400E936F0 /* ViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProtocol.swift; sourceTree = "<group>"; };
 		808BA0692912D21300E936F0 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		808BA06B2912D25000E936F0 /* MainCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorFactory.swift; sourceTree = "<group>"; };
 		808BA06D2912D2E800E936F0 /* RegistrationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFlow.swift; sourceTree = "<group>"; };
+		80B2DC05292B6DB5002C7777 /* FinalAccountCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalAccountCreationViewController.swift; sourceTree = "<group>"; };
 		80DA504E28F87E1F00499CAA /* Coffee Been.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffee Been.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80DA505128F87E1F00499CAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80DA505328F87E1F00499CAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +58,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		802C5AFC29229EFA0054BE6A /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				802C5AFF29229F2E0054BE6A /* LoginViewController.swift */,
+				802C5B03292A89030054BE6A /* CreateAccountViewController.swift */,
+				80B2DC05292B6DB5002C7777 /* FinalAccountCreationViewController.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
 		808BA05C2912CD4A00E936F0 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +89,7 @@
 		808BA05E2912CD6300E936F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				803E8DBB2912F4E000328ED0 /* OnboardingScreens.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -75,7 +97,8 @@
 		808BA05F2912CD6A00E936F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				808BA05A2912CCE800E936F0 /* OnboardingViewController.swift */,
+				802C5AFC29229EFA0054BE6A /* Registration */,
+				803E8DB92912DA0100328ED0 /* OnboardingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -87,6 +110,7 @@
 				80DA505F28F87E2100499CAA /* LaunchScreen.storyboard */,
 				80DA506228F87E2100499CAA /* Info.plist */,
 				80DA505A28F87E1F00499CAA /* Coffee_Been.xcdatamodeld */,
+				802C5B012923F38A0054BE6A /* UISettings.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -150,6 +174,7 @@
 				808BA05C2912CD4A00E936F0 /* Coordinator */,
 				80DA505128F87E1F00499CAA /* AppDelegate.swift */,
 				80DA505328F87E1F00499CAA /* SceneDelegate.swift */,
+				803E8DB82912D81400328ED0 /* MyPlayground.playground */,
 			);
 			path = "Coffee Been";
 			sourceTree = "<group>";
@@ -226,13 +251,18 @@
 			files = (
 				808BA06C2912D25000E936F0 /* MainCoordinatorFactory.swift in Sources */,
 				808BA0652912D06400E936F0 /* ViewControllerProtocol.swift in Sources */,
+				802C5B022923F38A0054BE6A /* UISettings.swift in Sources */,
+				803E8DBC2912F4E000328ED0 /* OnboardingScreens.swift in Sources */,
+				80B2DC06292B6DB5002C7777 /* FinalAccountCreationViewController.swift in Sources */,
 				80DA505C28F87E1F00499CAA /* Coffee_Been.xcdatamodeld in Sources */,
+				802C5B04292A89030054BE6A /* CreateAccountViewController.swift in Sources */,
 				808BA06E2912D2E800E936F0 /* RegistrationFlow.swift in Sources */,
 				80DA505228F87E1F00499CAA /* AppDelegate.swift in Sources */,
 				808BA0632912CF9000E936F0 /* CoordinatorProtocol.swift in Sources */,
 				80DA505428F87E1F00499CAA /* SceneDelegate.swift in Sources */,
-				808BA05B2912CCE800E936F0 /* OnboardingViewController.swift in Sources */,
+				803E8DBA2912DA0100328ED0 /* OnboardingViewController.swift in Sources */,
 				808BA06A2912D21300E936F0 /* AppCoordinator.swift in Sources */,
+				802C5B0029229F2E0054BE6A /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

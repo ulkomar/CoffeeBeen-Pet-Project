@@ -116,14 +116,16 @@ class OnboardingViewController: UIViewController {
     }
     
     @objc func nextPage(_ sender: UIButton) {
-        print(scrollView.contentOffset)
+        print(sender.tag)
         switch sender.tag {
         case 0:
             scrollView.setContentOffset(CGPoint(x: view.frame.width, y: 0), animated: true)
         case 1:
             scrollView.setContentOffset(CGPoint(x: view.frame.width * 2, y: 0), animated: true)
         case 2:
-            break // insert coordinator nav controller changer
+            let new = UINavigationController(rootViewController: LoginViewController())
+            present(new, animated: true)// insert coordinator nav controller changer
+
         default:
             break
         }
