@@ -43,7 +43,7 @@ class OnboardingViewController: UIViewController {
     private func setupSubviews() {
         self.view.addSubview(scrollView)
         setupPage(toScrollView: scrollView, toPage: 0, imageName: "onboarding1")
-        setupPage(toScrollView: scrollView, toPage: 1, imageName: "onboarding2")
+        setupPage(toScrollView: scrollView, toPage: 1, imageName: "onboarding2") 
         setupPage(toScrollView: scrollView, toPage: 2, imageName: "onboarding3")
     }
     
