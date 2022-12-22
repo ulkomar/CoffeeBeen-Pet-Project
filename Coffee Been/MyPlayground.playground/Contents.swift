@@ -16,7 +16,7 @@ class MyViewController : UIViewController {
         let label = UILabel()
         label.text = "Successfully created an account"
         label.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
-        label.numberOfLines = 3
+        label.numberOfLines = 3 
         label.textAlignment = .center
         label.textColor = Colors.black.getColor()
         return label
