@@ -58,7 +58,7 @@ class OnboardingViewController: UIViewController {
         page.layer.contents = cgIm
         page.backgroundColor = UIColor(patternImage: image)
         page.contentMode = .scaleAspectFill
-        page.clipsToBounds = true
+        page.clipsToBounds = true 
         
         //add Shadow
         let gradient = CAGradientLayer()
